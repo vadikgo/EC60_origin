@@ -60,6 +60,63 @@ This revision implements all the main features of the PCB.
 
 Both onboard USB-C and JST connectors are supported. In both cases the protection features are preserved (fused and ESD).
 
+## PCB order procedure
+
+In order to have me highers compatibility possible with PCB manufacturers, I decided to design the board around the [JLC7628 Stackup](https://cart.jlcpcb.com/impedance#:~:text=4%2DLayer%20Impedance%20Control%20Stackup) from JLCPCB.
+
+The rational behind this is that the JCPCB stackup is relatively cheap and if the board worked with the stackup, it would be easier to get the board to work with pretty much any other many that offer an equivalent stackup and higher prices.
+
+The plates can be instead be made out of standard 2 layer stackup or with metal, like the Realforce plates.
+
+### Production files
+
+The production can be found in the [Production folder](/Production).
+
+In there you'll find the main PCB files and the JIS and HHKB plates.
+
+As usual the `*.zip` files are the gerber files, `BOM-*.csv` are the BOM (Bill Of Material) files and `POS-*.csv` are the POS/CPL (Footprint POSition/Component Placement List) files.
+
+## Mainboard
+
+As mentioned above, the mainboard is designed around the JLCPCB stackup. The mainboard is a 4 layer board.
+
+Here are the options to select when ordering the mainboard:
+
+- PCB thickness: 1.6mm or 1.2mm
+- Impedance: NO
+- Layer stackup:
+  - L1(Top layer): `EC60-F_Cu.gbr`
+  - L2(Inner layer1): `EC60-In1_Cu.gbr`
+  - L3(Inner layer2): `EC60-In2_Cu.gbr`
+  - L4(Bottom layer): `EC60-B_Cu.gbr`
+- PCB Color: whatever you like
+- Surface Finish: whatever you like
+- Material Type: `FR-4 TG155`
+
+All the other options can be left as default.
+
+#### Assembly options
+
+Here follows the options to be used for assembly:
+- PCBA Type:
+  - Economic: if you plan to populate only the JST, without the onboard USB-C port
+  - Standard: if you plan to populate BOTH the JST and the onboard USB-C port
+- Assembly Side: Bottom
+- Tooling holes: `Added by JLCPCB`
+- Confirm Parts Placement: `yes`
+
+**NOTES ABOUT THE OPTIONS**
+
+- Once you upload the gerber files wait for the system to automatically recognize the board outline and layers. It will take a while, be patient.
+
+- `PCB thickness` has been tested on both 1.6mm and 1.2mm so it's your call on which one to use.
+
+- For `Material Type` I strongly suggest to use `FR-4 TG155`, using the standard `FR4-Standard TG130-140` material might result in the board delamination and generally is not advised on 4 layer boards.
+
+## Plates
+
+The plates are designed to be 2 layer boards. All the default options can be left as default, the only thing to change is the `PCB thickness` option, which should be set to `1.2mm`.
+
 ## Copyright notice
 
 This project is released under the MIT License. For the license, please refer to the LICENCE.md file.
