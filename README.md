@@ -37,8 +37,11 @@ Mainboard:
 JIS Plate:
 ![Plate JIS Render](/Assets/Plate_render_jis.png)
 
-HHKB Plate:
-![Plate HHKB Render](/Assets/Plate_render_hhkb.png)
+HHKB 6U Plate:
+![Plate HHKB Render](/Assets/Plate_render_hhkb_6u.png)
+
+HHKB 7U Plate:
+![Plate HHKB Render](/Assets/Plate_render_hhkb_7u.png)
 
 ### Prototype
 
@@ -98,9 +101,6 @@ All the other options can be left as default.
 #### Assembly options
 
 Here follows the options to be used for assembly:
-- PCBA Type:
-  - Economic: if you plan to populate only the JST, without the onboard USB-C port
-  - Standard: if you plan to populate BOTH the JST and the onboard USB-C port
 - Assembly Side: Bottom
 - Tooling holes: `Added by JLCPCB`
 - Confirm Parts Placement: `yes`
@@ -119,4 +119,4 @@ The plates are designed to be 2 layer boards. All the default options can be lef
 
 ## Copyright notice
 
-This project is released under the MIT License. For the license, please refer to the LICENCE.md file.
+This project is released under the MIT License. For the license, please refer to the LICENSE.md file.
