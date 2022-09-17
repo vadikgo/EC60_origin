@@ -45,17 +45,30 @@ HHKB 7U Plate:
 
 ### Prototype
 
+#### Rev 1
 ![PCB Front](/Assets/PCB_front.png)
 
 ![PCB Back](/Assets/PCB_back.png)
 
-*NOTE*: the prototype PCB doesn't include a USB port and the JST connector is in a different position compared to the one in the render. This is because the above was a modified version of the PCB to be used in Vero. For all intents and purposes, the PCB is the same.
+#### Rev 1.1
+![PCB 1.1](/Assets/PCB_1_1.png)
+
+*NOTE*: the prototype PCB for Rev1 doesn't include a USB port and the JST connector is in a different position compared to the one in the render. This is because the above was a modified version of the PCB to be used in Vero. For all intents and purposes, the PCB is the same.
 
 ## Revisions and relative features
 
-### Rev1
+### Rev 1
 
 This revision implements all the main features of the PCB.
+
+### Rev 1.1
+
+This revision implements some changes:
+
+- Changed the USB-C port to a different part that is more readily available
+- reassigning of some GPIO port functions to avoid problems during compilation and boot sequence.
+- connection of one of the mounting holes to the GND plane.
+- some minor changes in silkscreen
 
 #### Connectivity
 
