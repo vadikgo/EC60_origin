@@ -34,15 +34,6 @@ Mainboard:
 
 ![PCB Back Render](/Assets/PCB_render_back.png)
 
-JIS Plate:
-![Plate JIS Render](/Assets/Plate_render_jis.png)
-
-HHKB 6U Plate:
-![Plate HHKB Render](/Assets/Plate_render_hhkb_6u.png)
-
-HHKB 7U Plate:
-![Plate HHKB Render](/Assets/Plate_render_hhkb_7u.png)
-
 ### Prototype
 
 #### Rev 1
@@ -82,13 +73,9 @@ In order to have me highers compatibility possible with PCB manufacturers, I dec
 
 The rational behind this is that the JCPCB stackup is relatively cheap and if the board worked with the stackup, it would be easier to get the board to work with pretty much any other many that offer an equivalent stackup and higher prices.
 
-The plates can be instead be made out of standard 2 layer stackup or with metal, like the Realforce plates.
-
 ### Production files
 
 The production can be found in the [Production folder](/Production).
-
-In there you'll find the main PCB files and the JIS and HHKB plates.
 
 As usual the `*.zip` files are the gerber files, `BOM-*.csv` are the BOM (Bill Of Material) files and `POS-*.csv` are the POS/CPL (Footprint POSition/Component Placement List) files.
 
@@ -125,10 +112,6 @@ Here follows the options to be used for assembly:
 - `PCB thickness` has been tested on both 1.6mm and 1.2mm so it's your call on which one to use.
 
 - For `Material Type` I strongly suggest to use `FR-4 TG155`, using the standard `FR4-Standard TG130-140` material might result in the board delamination and generally is not advised on 4 layer boards.
-
-## Plates
-
-The plates are designed to be 2 layer boards. All the default options can be left as default, the only thing to change is the `PCB thickness` option, which should be set to `1.2mm`.
 
 ## Copyright notice
 
