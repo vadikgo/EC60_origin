@@ -1,4 +1,4 @@
-/* Copyright 2022 Cipulot
+/* Copyright 2023 Cipulot
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -43,7 +43,7 @@ static inline void charge_capacitor(uint8_t row) {
 }
 
 static inline void clear_all_row_pins(void) {
-    for (int row = 0; row < 6; row++) {
+    for (int row = 0; row < MATRIX_ROWS; row++) {
         writePinLow(row_pins[row]);
     }
 }
@@ -62,7 +62,7 @@ static inline void select_mux(uint8_t col) {
 }
 
 static inline void init_row(void) {
-    for (int idx = 0; idx < 5; idx++) {
+    for (int idx = 0; idx < MATRIX_ROWS; idx++) {
         setPinOutput(row_pins[idx]);
         writePinLow(row_pins[idx]);
     }
@@ -154,7 +154,7 @@ bool ecsm_matrix_scan(matrix_row_t current_matrix[]) {
     // Disable AMUX of channel 1
     writePinHigh(APLEX_EN_PIN_1);
     for (int col = 0; col < sizeof(col_channels); col++) {
-        for (int row = 0; row < 5; row++) {
+        for (int row = 0; row < MATRIX_ROWS; row++) {
             ecsm_sw_value[row][col] = ecsm_readkey_raw(0, row, col);
             updated |= ecsm_update_key(&current_matrix[row], row, col, ecsm_sw_value[row][col]);
         }
@@ -162,8 +162,8 @@ bool ecsm_matrix_scan(matrix_row_t current_matrix[]) {
 
     // Disable AMUX of channel 1
     writePinHigh(APLEX_EN_PIN_0);
-    for (int col = 0; col < sizeof(col_channels); col++) {
-        for (int row = 0; row < 5; row++) {
+    for (int col = 0; col < (sizeof(col_channels) - 1); col++) {
+        for (int row = 0; row < MATRIX_ROWS; row++) {
             ecsm_sw_value[row][col + 8] = ecsm_readkey_raw(1, row, col);
             updated |= ecsm_update_key(&current_matrix[row], row, col + 8, ecsm_sw_value[row][col + 8]);
         }
@@ -173,10 +173,10 @@ bool ecsm_matrix_scan(matrix_row_t current_matrix[]) {
 
 // Debug print key values
 void ecsm_print_matrix(void) {
-    for (int row = 0; row < 5; row++) {
-        for (int col = 0; col < 15; col++) {
+    for (int row = 0; row < MATRIX_ROWS; row++) {
+        for (int col = 0; col < MATRIX_COLS; col++) {
             uprintf("%4d", ecsm_sw_value[row][col]);
-            if (col < 15) {
+            if (col < MATRIX_COLS - 1) {
                 print(",");
             }
         }
