@@ -14,4 +14,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "ec60.h"
+#pragma once
+
+#include_next <mcuconf.h>
+
+#undef STM32_ADC_USE_ADC1
+#define STM32_ADC_USE_ADC1 TRUE
