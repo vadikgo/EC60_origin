@@ -466,7 +466,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "../../Assets/EC60_PCB.step",
+      "step": "../../Assets/EC_PCB.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
